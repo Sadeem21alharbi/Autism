@@ -11,5 +11,5 @@ urlpatterns = [
     path('conversation/create/', views.create_conversation),
     path('conversation/<int:conv_id>/send/', views.send_message),
     path('conversation/<int:conv_id>/messages/', views.get_messages),
-    path('get-conversation/', views.get_or_create_conversation),  # ✅ صح
+    path('get-conversation/', views.get_or_create_conversation),  
 ]

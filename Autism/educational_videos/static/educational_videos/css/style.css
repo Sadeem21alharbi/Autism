@@ -563,36 +563,6 @@ body {
   grid-template-columns: 1.4fr .8fr;
   gap: 30px;
 }
-<<<<<<< HEAD
-.video-player-card{
-    background:#fff;
-    border-radius:28px;
-    padding:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,.06);
-
-    min-height:40px;
-}
-
-.video-player{
-    width:100%;
-    height:100%;
-
-    overflow:hidden;
-    border-radius:22px;
-    background:#000;
-}
-
-.video-player video{
-    width:100%;
-    height:100%;
-    display:block;
-    object-fit:contain;
-}
-.video-side{
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-=======
 
 .video-player-card {
   background: #fff;
@@ -617,7 +587,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
->>>>>>> 9d609d6baf0e28e8bab8eb43d7febede8d479e23
 }
 
 .video-info-card {
@@ -712,10 +681,8 @@ body {
   }
 
 }
-<<<<<<< HEAD
-}
 
-=======
+
 
 
 /* =========================
@@ -844,4 +811,3 @@ body {
   }
 
 }
->>>>>>> 9d609d6baf0e28e8bab8eb43d7febede8d479e23

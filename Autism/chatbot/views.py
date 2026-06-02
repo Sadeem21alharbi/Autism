@@ -7,7 +7,7 @@ from .models import Conversation, ChatMessage
 from .serializers import ChatMessageSerializer
 
 
-# HTML Views
+
 def chatbot_view(request):
     return render(request, 'chatbot/chatbot.html')
 
@@ -18,7 +18,7 @@ def chatbot_window(request):
     return render(request, 'chatbot/chatbot_window.html')
 
 
-# API: get or create conversation
+
 def get_or_create_conversation(request):
     if not request.user.is_authenticated:
         return JsonResponse({"error": "login required"}, status=401)
@@ -27,7 +27,7 @@ def get_or_create_conversation(request):
     return JsonResponse({"conv_id": conv.id})
 
 
-# API: create conversation
+
 @api_view(['POST'])
 def create_conversation(request):
     if not request.user.is_authenticated:
@@ -37,7 +37,7 @@ def create_conversation(request):
     return Response({"id": conv.id})
 
 
-# API: send message
+
 @api_view(['POST'])
 def send_message(request, conv_id):
     content = request.data.get('content')
@@ -50,14 +50,14 @@ def send_message(request, conv_id):
     except Conversation.DoesNotExist:
         raise Http404("Conversation not found")
 
-    # Create User message
+    
     msg = ChatMessage.objects.create(
         conversation=conv,
         message_type='user',
         content=content
     )
 
-    # Call AI API to generate response
+    
     ai_content = ""
     try:
         from decouple import config
@@ -83,12 +83,12 @@ def send_message(request, conv_id):
 
         recent_messages = ChatMessage.objects.filter(conversation=conv).order_by('created_at')[:20]
 
-        # Flag to track if successfully generated
+        
         generated = False
 
         
 
-        # 2. Try OpenAI Fallback
+        
         if not generated and openai_api_key:
             try:
                 from openai import OpenAI
@@ -117,7 +117,7 @@ def send_message(request, conv_id):
 
                 ai_content = f"حدث خطأ أثناء التواصل مع الذكاء الاصطناعي (OpenAI): {str(e_openai)}"
         
-        # 3. If neither worked
+        
         if not generated:
             if not gemini_api_key or gemini_api_key == "your_gemini_api_key_here":
                 if not openai_api_key:
@@ -130,7 +130,7 @@ def send_message(request, conv_id):
     except Exception as e:
         ai_content = f"حدث خطأ غير متوقع: {str(e)}"
 
-    # Create AI message
+    
     ai_msg = ChatMessage.objects.create(
         conversation=conv,
         message_type='ai',
@@ -143,7 +143,7 @@ def send_message(request, conv_id):
 })
 
 
-# API: get messages
+
 @api_view(['GET'])
 def get_messages(request, conv_id):
     messages = ChatMessage.objects.filter(

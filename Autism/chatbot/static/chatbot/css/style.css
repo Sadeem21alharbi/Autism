@@ -11,7 +11,6 @@
     animation: popIn 0.6s ease;
 }
 
-/* دخول ناعم */
 @keyframes popIn {
     from {
         transform: scale(0.85);
@@ -23,7 +22,6 @@
     }
 }
 
-/* عنوان الشات */
 .chat-header {
     padding: 15px;
     background: linear-gradient(90deg, #6a11cb, #2575fc);
@@ -33,7 +31,6 @@
     letter-spacing: 1px;
 }
 
-/* صندوق الرسائل */
 .messages {
     flex: 1;
     padding: 15px;
@@ -43,7 +40,6 @@
     gap: 10px;
 }
 
-/* شكل الرسائل */
 .msg {
     max-width: 75%;
     padding: 10px 14px;
@@ -54,7 +50,7 @@
     word-wrap: break-word;
 }
 
-/* دخول الرسائل */
+
 @keyframes fadeMsg {
     from {
         opacity: 0;
@@ -66,7 +62,6 @@
     }
 }
 
-/* رسالة المستخدم */
 .user {
     align-self: flex-end;
     background: #4ade80;
@@ -74,7 +69,6 @@
     border-bottom-right-radius: 5px;
 }
 
-/* رسالة النظام / AI */
 .ai {
     align-self: flex-start;
     background: #3b82f6;
@@ -82,7 +76,6 @@
     border-bottom-left-radius: 5px;
 }
 
-/* منطقة الإدخال */
 .input-area {
     display: flex;
     padding: 10px;
@@ -101,7 +94,6 @@
     color: white;
 }
 
-/* زر الإرسال */
 .input-area button {
     padding: 10px 14px;
     border: none;
@@ -112,13 +104,11 @@
     transition: 0.3s;
 }
 
-/* hover زر */
 .input-area button:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 81, 47, 0.5);
 }
 
-/* scrollbar */
 .messages::-webkit-scrollbar {
     width: 6px;
 }

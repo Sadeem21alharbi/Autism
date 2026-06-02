@@ -50,7 +50,6 @@
                 قم برفع مقطع فيديو قصير للطفل أثناء قيامه بأنشطة يومية لمدة 3-5 دقائق.
             </p>
 
-            <!-- إشعار التحليل -->
             <div id="uploadingNotice" style="display:none; background:#f0faf5; border:1px solid #1D9E75; border-radius:12px; padding:14px 16px; margin-bottom:16px; display:none; align-items:center; gap:10px;">
                 <i class="bi bi-stars" style="color:#1D9E75; font-size:20px;"></i>
                 <div>
@@ -69,7 +68,6 @@
 
                 {% csrf_token %}
 
-                <!-- اختيار الطفل -->
                 <div style="margin-bottom:15px;">
                     <label style="display:block; margin-bottom:8px; font-size:14px; font-weight:bold;">
                         اختر الطفل
@@ -82,7 +80,6 @@
                     </select>
                 </div>
 
-                <!-- منطقة رفع الفيديو -->
                 <label for="video-upload" id="uploadBox" class="upload-box-v2"
                        style="cursor:pointer; display:block; text-align:center;">
                     <div style="font-size:40px; margin-bottom:10px;">☁️</div>
@@ -96,7 +93,6 @@
                            hidden>
                 </label>
 
-                <!-- معاينة الفيديو خارج الـ label -->
                 <div id="videoPreviewContainer" style="display:none; margin-top:15px;">
                     <video id="videoPreview" controls
                            style="width:100%; border-radius:16px; max-height:300px; object-fit:cover;">

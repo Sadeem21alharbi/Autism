@@ -18,13 +18,11 @@ def profile_view(request, id):
         if (today.month, today.day) < (child.birth_date.month, child.birth_date.day):
             age -= 1
 
-    # إحصائيات ديناميكية
     sessions_count = AssessmentSession.objects.filter(child=child).count()
     plan           = SupportPlan.objects.filter(child=child).first()
     skills_count   = len(plan.categories) if plan else 0
     activities_count = PlanActivity.objects.filter(plan=plan).count() if plan else 0
 
-    # تقدم المهارات
     skill_progress = []
     if plan:
         category_names = {
@@ -40,7 +38,6 @@ def profile_view(request, id):
                 'pct':   50,
             })
 
-    # آخر الجلسات
     last_sessions = AssessmentSession.objects.filter(
         child=child
     ).order_by('-created_at')[:3]
@@ -111,6 +108,6 @@ def delete_child(request, id):
     if request.method == "POST":
         child.delete()
         messages.success(request, "تم حذف ملف الطفل بنجاح")
-        return redirect("main:home_page_view")  # 👈 هنا التعديل
+        return redirect("main:home_page_view")  
 
     return redirect("children:profile", id=id)

@@ -82,14 +82,13 @@
 
 
 <script>
-  // جلب البيانات مباشرة من Django
-  // المفروض ✅
-  const allData = {
-    visual:   {{ visual_json | safe }},
-    sensory:  {{ sensory_json | safe }},
-    motor:    {{ motor_json | safe }},
-    language: {{ language_json | safe }},
-  };
+
+const allData = {
+    visual:   JSON.parse('{{ visual_json|safe }}'),
+    sensory:  JSON.parse('{{ sensory_json|safe }}'),
+    motor:    JSON.parse('{{ motor_json|safe }}'),
+    language: JSON.parse('{{ language_json|safe }}'),
+};
 
   const bgColors = {
     visual: '#fff3e0',

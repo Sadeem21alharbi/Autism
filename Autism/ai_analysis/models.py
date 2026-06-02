@@ -32,7 +32,7 @@ class Activity(models.Model):
     order       = models.PositiveIntegerField(default=0, verbose_name="الترتيب")
     duration_minutes = models.PositiveIntegerField(default=10,verbose_name="مدة النشاط بالدقائق")
     created_at  = models.DateTimeField(auto_now_add=True)
-    tag         = models.CharField(max_length=50, blank=True)  # مثال: "بصري + حركي"
+    tag         = models.CharField(max_length=50, blank=True)  
 
 
     class Meta:
@@ -66,7 +66,7 @@ class ResourceVideo(models.Model):
         return f"{self.title} — {self.get_category_display()}"
     
 
-##################################################################
+
 class VideoAnalysis(models.Model):
 
     child = models.ForeignKey(

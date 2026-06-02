@@ -43,9 +43,7 @@ def support_plan_redirect(request):
 
     return redirect('plans:main_plan_view')
 
-# ==========================================
-# صفحة الأنشطة المقترحة
-# ==========================================
+
 
 @login_required(login_url='accounts:signin')
 def support_plan_view(request: HttpRequest):
@@ -71,7 +69,7 @@ def support_plan_view(request: HttpRequest):
 
         child_age = (date.today() - session.child.birth_date).days // 365
 
-        # جلب نشاطين متنوعين — واحد من كل تصنيف
+        
         selected_activities = []
         for cat in categories[:2]:
             activity = Activity.objects.filter(
@@ -83,7 +81,7 @@ def support_plan_view(request: HttpRequest):
             if activity:
                 selected_activities.append(activity)
 
-        # لو ما كفى نكمل من activity_ids
+        
         if len(selected_activities) < 2:
             extra = list(Activity.objects.filter(id__in=activity_ids))
             for act in extra:
@@ -92,7 +90,7 @@ def support_plan_view(request: HttpRequest):
                 if len(selected_activities) >= 2:
                     break
 
-        # توزيع نشاطين مختلفين لكل يوم
+        
         days = ['saturday', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday']
         weekly_activities = []
 
@@ -119,7 +117,6 @@ def support_plan_view(request: HttpRequest):
                     'activity_id': act2.id,
                 })
 
-        # نحفظ الروتين من AI + الأنشطة الأسبوعية معاً
         weekly_plan = {
             'routine':         daily_routine_data.get('routine', []),
             'calm_tip':        daily_routine_data.get('calm_tip', ''),
@@ -150,12 +147,10 @@ def support_plan_view(request: HttpRequest):
         for key in ['result_categories', 'result_activities', 'result_videos', 'ai_summary', 'daily_routine']:
             request.session.pop(key, None)
 
-    # جلب الأنشطة
     plan_activities  = PlanActivity.objects.filter(plan=plan)
     current_activity = plan_activities.first()
     next_activity    = plan_activities[1] if plan_activities.count() > 1 else None
 
-    # جلب الفيديوهات حسب التصنيف وعمر الطفل
     child_age = (date.today() - plan.child.birth_date).days // 365
     videos = ResourceVideo.objects.filter(
         category__in=plan.categories,
@@ -181,9 +176,6 @@ def support_plan_view(request: HttpRequest):
     })
 
 
-# ==========================================
-# الخطة الرئيسية — الروتين اليومي من AI
-# ==========================================
 
 @login_required(login_url='accounts:signin')
 def main_plan_view(request: HttpRequest):
@@ -243,9 +235,7 @@ def main_plan_view(request: HttpRequest):
     })
 
 
-# ==========================================
-# الفيديوهات التعليمية — حسب عمر الطفل
-# ==========================================
+
 
 @login_required(login_url='accounts:signin')
 def video_plan_view(request: HttpRequest):
@@ -269,9 +259,7 @@ def video_plan_view(request: HttpRequest):
     })
 
 
-# ==========================================
-# استراتيجيات الدعم
-# ==========================================
+
 
 @login_required(login_url='accounts:signin')
 def support_strategies_view(request: HttpRequest):
@@ -313,9 +301,7 @@ def support_strategies_view(request: HttpRequest):
     })
 
 
-# ==========================================
-# Feedback ولي الأمر — يحدث الخطة بـ AI
-# ==========================================
+
 
 @login_required(login_url='accounts:signin')
 def update_plan_feedback(request):

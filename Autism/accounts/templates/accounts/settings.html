@@ -206,7 +206,6 @@
 
             <div class="theme-options">
 
-                <!-- الافتراضي ✅ صح -->
                 <a href="{% url 'main:set_theme' 'default' %}?next={{ request.get_full_path }}"
                     class="theme-option {% if theme == 'default' %}active{% endif %}">
                     <div class="theme-preview light-preview">
@@ -219,7 +218,6 @@
                     <span>الافتراضي</span>
                 </a>
 
-                <!-- وردي -->
                 <a href="{% url 'main:set_theme' 'pink' %}?next={{ request.get_full_path }}"
                     class="theme-option {% if theme == 'pink' %}active{% endif %}">
                     <div class="theme-preview pink-preview">
@@ -232,7 +230,6 @@
                     <span>وردي</span>
                 </a>
 
-                <!-- الأزرق -->
                 <a href="{% url 'main:set_theme' 'blue' %}?next={{ request.get_full_path }}"
                     class="theme-option {% if theme == 'blue' %}active{% endif %}">
                     <div class="theme-preview blue-preview">
@@ -245,7 +242,6 @@
                     <span>الازرق</span>
                 </a>
 
-                <!-- البنفسجي -->
                 <a href="{% url 'main:set_theme' 'purple' %}?next={{ request.get_full_path }}"
                     class="theme-option {% if theme == 'purple' %}active{% endif %}">
                     <div class="theme-preview purple-preview">
@@ -411,7 +407,6 @@
 
         const slider = document.getElementById("fontSlider");
 
-        // إذا ما فيه حجم محفوظ
         if (!saved) {
 
             saved = 2;
@@ -465,7 +460,6 @@
         applyFontSize(input.value);
     }
 
-    // عند فتح الصفحة
     window.addEventListener("load", () => {
         let saved = getCookie("fontSize");
 

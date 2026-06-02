@@ -24,6 +24,23 @@
 </head>
 
 <body id="top">
+
+    {% if messages %}
+    <div class="messages-container">
+        {% for message in messages %}
+        <div class="message message-{{ message.tags }}">
+            <span class="message-text">{{ message }}</span>
+
+            <button class="close-btn" onclick="this.parentElement.remove()">
+                &times;
+            </button>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+
+    
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="فتح القائمة">
         <i class="bi bi-list"></i>
     </button>
@@ -35,7 +52,6 @@
             <!-- Logo -->
             <div class="sidebar-logo">
                 <div class="logo-circle">
-                    <!-- إضافة الرابط الجديد والتأكد من تفعيله -->
                     <img src="https://res.cloudinary.com/ddkq9ideu/image/upload/q_auto/f_auto/v1778787766/update-logo-removebg-preview_tmgxol.png"
                         alt="لوجو إحتواء">
                 </div>
@@ -403,7 +419,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// chatbot script
 
 let convId = null;
 
@@ -482,7 +497,6 @@ async function sendMessage() {
 
     let box = document.getElementById("messages");
 
-    // رسالة المستخدم تظهر فورًا
     let userDiv = document.createElement("div");
 
     userDiv.classList.add("msg", "user");
@@ -493,7 +507,6 @@ async function sendMessage() {
 
     box.scrollTop = box.scrollHeight;
 
-    // جاري الكتابة
     let typingDiv = document.createElement("div");
 
     typingDiv.classList.add("msg", "bot");
@@ -530,7 +543,6 @@ async function sendMessage() {
 
             let typing = document.getElementById("typing-indicator");
 
-            // إذا رد البوت وصل نحذف جاري الكتابة
             if (typing) {
                 typing.remove();
             }
@@ -609,7 +621,38 @@ document.addEventListener('DOMContentLoaded', function () {
         hamburgerBtn.innerHTML = '<i class="bi bi-x-lg"></i>';
     }
 
-    function closeSidebar() {
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== "") {
+            document.cookie.split(";").forEach(cookie => {
+                let c = cookie.trim();
+                if (c.startsWith(name + "=")) {
+                    cookieValue = decodeURIComponent(c.substring(name.length + 1));
+             }
+        });
+    }
+
+    return cookieValue;
+}
+
+        document.getElementById("input").addEventListener("keydown", function (e) {
+            if (e.key === "Enter") sendMessage();
+        });
+
+
+
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+
+                    });
+
+                        function closeSidebar() {
 
         sidebar.classList.remove('open');
         overlay.classList.remove('active');
@@ -635,7 +678,9 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});
+    });
+
+
 
 function setCookie(name, value, days) {
 

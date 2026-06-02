@@ -7,9 +7,7 @@ from decouple import config
 client = OpenAI(api_key=config('OPENAI_API_KEY'))
 
 
-# ==========================================
-# الدالة 1 — تحليل التقييم وتحديد التصنيفات
-# ==========================================
+
 
 def get_recommendations(video_analysis: str, questionnaire_answers: dict, child_age: int, child_info: dict = {}):
 
@@ -56,7 +54,6 @@ def get_recommendations(video_analysis: str, questionnaire_answers: dict, child_
 
     categories = json.loads(raw)
 
-    # ✅ التعديل الوحيد — نجيب التصنيفات من SkillCategory
     valid_values     = [choice[0] for choice in SkillCategory.choices]
     valid_categories = [c for c in categories if c in valid_values]
 
@@ -81,9 +78,7 @@ def get_recommendations(video_analysis: str, questionnaire_answers: dict, child_
     }
 
 
-# ==========================================
-# الدالة 2 — بناء الخطة اليومية الروتينية
-# ==========================================
+
 
 def build_daily_routine(child_age: int, categories: list, child_info: dict = {}):
 

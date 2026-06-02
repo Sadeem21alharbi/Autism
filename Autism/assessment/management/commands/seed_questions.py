@@ -11,7 +11,6 @@ class Command(BaseCommand):
 
         questions = [
 
-            # مسار ب — تقييم فقط
 
             {'text': 'هل يتابع الطفل الأشياء المتحركة بعينيه؟', 'path': 'questionnaire', 'category': 'visual', 'source': 'M-CHAT البند 2', 'order': 1},
             {'text': 'هل يأتي لك بأشياء ليريك إياها؟', 'path': 'questionnaire', 'category': 'visual', 'source': 'M-CHAT البند 11', 'order': 2},
@@ -34,7 +33,6 @@ class Command(BaseCommand):
             {'text': 'هل يستخدم الإيماءات مثل التلويح والإشارة للتواصل؟', 'path': 'questionnaire', 'category': 'language', 'source': 'M-CHAT البند 10', 'order': 16},
 
 
-            # مسار أ — فيديو + تقييم
 
             {'text': 'هل يصعب عليه تغيير الروتين اليومي دون انهيار عاطفي؟', 'path': 'video', 'category': 'sensory', 'source': 'CARS-2 البند 12', 'order': 1},
             {'text': 'هل لديه أطعمة يرفضها بشكل قاطع بسبب قوامها أو لونها؟', 'path': 'video', 'category': 'sensory', 'source': 'CARS-2 البند 12', 'order': 2},

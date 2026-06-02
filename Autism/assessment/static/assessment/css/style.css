@@ -765,3 +765,11 @@
 .answer-btn {
     cursor: pointer;
 }
+
+.progress-fill-v2 {
+    width: var(--dynamic-progress, var(--dynamic-width, 0%)); 
+    height: 100%;
+    background-color: var(--primary-green, #7fc75b);
+    border-radius: 50px;
+    transition: width 0.4s ease-in-out;
+}

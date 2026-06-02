@@ -82,11 +82,9 @@ html {
     --base-font-size: 16px;
 }
 
-/* ─── App Shell ──────────────────────────────────────────── */
 .app-shell {
     display: flex;
     flex-direction: row;
-    /* sidebar right, content left — handled by RTL */
     min-height: 100vh;
 }
 
@@ -204,7 +202,6 @@ html {
 .nav-link-item {
     display: flex;
     align-items: center;
-    /* RTL: first child → rightmost, last child → leftmost */
     padding: 9px 16px 9px 14px;
     margin: 2px 10px;
     border-radius: var(--radius);
@@ -232,21 +229,18 @@ html {
     color: var(--green-dark);
 }
 
-/* label is first in DOM → rightmost in RTL */
 .nav-label {
     flex: 1;
     text-align: right;
     color: #3f5e35;
 }
 
-/* icon is second in DOM → left of label in RTL */
 .nav-icon {
     font-size: 17px;
     color: #3f5e35;
     flex-shrink: 0;
 }
 
-/* badge is third in DOM → leftmost in RTL */
 .nav-badge {
     background-color: var(--orange);
     color: #fff;
@@ -259,7 +253,6 @@ html {
     flex-shrink: 0;
 }
 
-/* child sub-item indent */
 .nav-link-item.child-item {
     padding-right: 20px;
     margin-right: 20px;
@@ -276,7 +269,6 @@ html {
     padding: 14px;
 }
 
-/* avatar → rightmost in RTL */
 .profile-avatar {
     width: 38px;
     height: 38px;
@@ -310,7 +302,6 @@ html {
     color: var(--text-muted);
 }
 
-/* arrow → leftmost in RTL */
 .profile-arrow {
     font-size: 13px;
     color: var(--text-muted);
@@ -320,7 +311,6 @@ html {
 /* ─── Main Content ───────────────────────────────────────── */
 .main-wrapper {
     margin-right: var(--sidebar-w);
-    /* push left of sidebar */
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -979,7 +969,6 @@ html {
     color: #1f2a1c;
 }
 
-/* ─── التعديلات الشاملة للتجاوب والتوسيط الكامل على الهواتف ────────────────────────────────── */
 
 @media (max-width: 1100px) {
     .home-hero {
@@ -1024,7 +1013,6 @@ html {
         width: min(310px, 74vw);
     }
 
-    /* تحويل كل الشبكات المائلة إلى عمود واحد ومتوسط */
     .home-quick-actions,
     .home-features-grid,
     .sub-cards {
@@ -1039,7 +1027,6 @@ html {
         margin: 44px auto 62px;
     }
 
-    /* توسيط نصوص كروت الميزات */
     .home-feature-card {
         text-align: center !important;
         width: 100%;
@@ -1052,7 +1039,6 @@ html {
         margin: -20px -16px 0;
     }
 
-    /* الهيرو / الواجهة الرئيسية */
     .home-hero {
         min-height: auto;
         padding: 34px 18px 40px;
@@ -1060,7 +1046,6 @@ html {
 
     .home-hero h1 {
         font-size: 32px;
-        /* تصغير مناسب لشاشة الأيفون XR */
         text-align: center;
     }
 
@@ -1069,7 +1054,6 @@ html {
         text-align: center;
     }
 
-    /* قسم الإجراءات السريعة (رفع فيديو / الاستبيان) */
     .home-quick-actions {
         gap: 18px;
         padding: 0 16px;
@@ -1085,7 +1069,6 @@ html {
         text-align: center !important;
     }
 
-    /* قسم لماذا يختار الوالدان احتواء */
     .home-features {
         padding: 62px 16px;
     }
@@ -1100,7 +1083,6 @@ html {
         text-align: center !important;
     }
 
-    /* قسم الاشتراك والخطط (sub-section) */
     .sub-container {
         padding: 0 16px;
     }
@@ -1122,7 +1104,6 @@ html {
     .sub-card {
         width: 100% !important;
         max-width: 380px;
-        /* مقاس ممتاز لعرض كرت السعر داخل شاشة الأيفون */
         margin: 0 auto !important;
         text-align: center !important;
         display: flex;
@@ -1130,25 +1111,21 @@ html {
         align-items: center;
     }
 
-    /* توسيط القائمة التي بداخل كروت الأسعار */
     .sub-features {
         width: 100%;
         padding: 0 !important;
         display: flex;
         flex-direction: column;
         align-items: center !important;
-        /* تجعل الأيقونة والنص في المنتصف */
         text-align: center !important;
     }
 
     .sub-features li {
         justify-content: center !important;
-        /* لضمان توسط الأيقونة مع النص */
         text-align: center !important;
         gap: 8px;
     }
 
-    /* قسم البانر السفلي (CTA) */
     .home-cta {
         margin: 44px 16px;
         border-radius: 28px;
@@ -1179,7 +1156,6 @@ html {
         text-align: center;
     }
 
-    /* الزر العائم للملف الشخصي */
     .floating-profile {
         left: 18px;
         bottom: 18px;
@@ -1209,7 +1185,6 @@ html {
 
 
 
-/* Legal pages */
 .legal-page {
     --legal-green: #b9d4a7;
     --legal-green-soft: #f4f8f2;
@@ -2874,6 +2849,7 @@ html {
 }
 
 .academy-badge {
+    display: inline-block;
     background: #EDE7DC;
     color: #6B7B5F;
     padding: 8px 20px;
@@ -2881,6 +2857,7 @@ html {
     font-size: 0.85rem;
     font-weight: 600;
     letter-spacing: 1px;
+    margin-bottom: 30px;
 }
 
 .team-grid {
@@ -3295,7 +3272,7 @@ html {
     display: flex;
     justify-content: center;
 
-    
+
 }
 
 .sub-card {
@@ -3310,6 +3287,7 @@ html {
 
     width: 420px;
 }
+
 .sub-card:hover {
     transform: translateY(-5px);
 }
@@ -3607,7 +3585,6 @@ html {
     opacity: 0.7;
 }
 
-/* ─── Hamburger Button ───────────────────────────────────── */
 .hamburger-btn {
     display: none;
     position: fixed;
@@ -3674,7 +3651,6 @@ html {
         padding-top: 60px;
     }
 
-    /* الصفحات اللي عندها margin سالب تحتاج تعويض */
     .home-page,
     .legal-page,
     .contact-page,
@@ -3706,7 +3682,6 @@ html {
     .how-page,
     .about-page,
     .weekly-container {
-        /* ← أضيفيه هنا */
         margin-top: -60px !important;
     }
 }
@@ -3729,9 +3704,7 @@ html {
     max-width: 420px;
 }
 
-/* الرسالة */
 
-/* الأنواع */
 .message-success {
     background: #e6f7ec;
     color: #1e7e34;
@@ -3777,7 +3750,6 @@ html {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* زر الإغلاق */
 .close-btn {
     position: absolute;
     top: 6px;

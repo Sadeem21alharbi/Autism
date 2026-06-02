@@ -55,14 +55,27 @@ def create_post_view(request: HttpRequest):
         form = PostForm()
 
     return render(request, 'community/create_post.html', {'form': form})
-
 def details_post_view(request:HttpRequest, post_id):
 
     post = get_object_or_404(Post, id=post_id)
     post.tags_list = post.tags.split(',')
+
     is_liked = False
     if request.user.is_authenticated:
-        is_liked = Like.objects.filter(post=post,user=request.user).exists()
+        is_liked = Like.objects.filter(post=post, user=request.user).exists()
+
+    
+    comments = Comment.objects.filter(post=post)
+
+    
+    if request.user.is_authenticated:
+        liked_comment_ids = CommentLike.objects.filter(
+            user=request.user,
+            comment__post=post
+        ).values_list('comment_id', flat=True)
+
+        for comment in comments:
+            comment.is_liked = comment.id in liked_comment_ids
 
     if request.method == 'POST':
         form = CommentForm(request.POST)
@@ -73,13 +86,17 @@ def details_post_view(request:HttpRequest, post_id):
             comment.save()
             messages.success(request, "تم إضافة التعليق بنجاح")
 
-            return redirect('community:details_post_view',post_id=post.id)
+            return redirect('community:details_post_view', post_id=post.id)
     else:
         form = CommentForm()
 
-
-    return render(request,'community/details_post.html',{'post': post, 'form': form,'is_liked': is_liked,'reasons': Report.REASONS})
-
+    return render(request, 'community/details_post.html', {
+        'post': post,
+        'form': form,
+        'is_liked': is_liked,
+        'comments': comments,   
+        'reasons': Report.REASONS
+    })
 def posts_by_tag(request:HttpRequest, tag_name):
 
     posts = Post.objects.filter(tags__icontains=tag_name)

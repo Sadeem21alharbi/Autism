@@ -27,7 +27,6 @@
 
 let convId = null;
 
-// تهيئة الشات وجلب رقم المحادثة الخاص بالمستخدم
 async function initChat() {
     try {
         let res = await fetch('/api/get-conversation/');
@@ -44,7 +43,6 @@ async function initChat() {
     }
 }
 
-// تحميل الرسائل
 async function loadMessages() {
     if (!convId) return;
 
@@ -64,7 +62,6 @@ async function loadMessages() {
     box.scrollTop = box.scrollHeight;
 }
 
-// إرسال رسالة
 async function sendMessage() {
     if (!convId) return;
 
@@ -72,7 +69,6 @@ async function sendMessage() {
     let content = input.value.trim();
     if (!content) return;
     
-    // إفراغ الحقل فوراً وعرض الرسالة مؤقتاً (اختياري)
     input.value = "";
 
     let res = await fetch(`/api/conversation/${convId}/send/`, {
@@ -91,7 +87,6 @@ async function sendMessage() {
     }
 }
 
-// Function to get CSRF token
 function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== '') {
@@ -107,7 +102,6 @@ function getCookie(name) {
     return cookieValue;
 }
 
-// تحديث أولي
 initChat();
 
 </script>

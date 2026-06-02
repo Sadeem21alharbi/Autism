@@ -53,10 +53,9 @@
                 </div>
             </div>
 
-            <div class="progress-bar-v2" style="margin-top:15px;">
-                <div class="progress-fill-v2" style="width:{{ progress }}%;"></div>
-            </div>
-
+<div class="progress-bar-v2" style="margin-top: 15px;">
+    <div class="progress-fill-v2" style="--dynamic-progress: {{ progress }}%;"></div>
+</div>
             <!-- question -->
             <div class="question-box">
                 <h2>{{ question.text }}</h2>
@@ -136,11 +135,9 @@
 <script>
 document.querySelectorAll('.answer-choice').forEach(function(label) {
     label.addEventListener('click', function() {
-        // نمسح selected من كل الخيارات
         document.querySelectorAll('.answer-choice').forEach(function(l) {
             l.classList.remove('selected');
         });
-        // نضيف selected للخيار المضغوط
         this.classList.add('selected');
     });
 });

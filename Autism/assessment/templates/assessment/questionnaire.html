@@ -22,16 +22,15 @@
             السؤال {{ current_index }} من {{ total }} — {{ progress }}%
         </div>
 
-        <div class="progress-bar-v2" style="margin-bottom:20px;">
-            <div class="progress-fill-v2" style="width:{{ progress }}%;"></div>
-        </div>
+<div class="progress-bar-v2" style="margin-bottom:20px;">
+    <div class="progress-fill-v2" style="--dynamic-width: {{ progress }}%;"></div>
+</div>
 
         <h2>{{ question.text }}</h2>
         <div style="font-size:12px; color:#aaa; margin-bottom:16px;">
             المصدر: {{ question.source }}
         </div>
 
-        <!-- رسالة الخطأ -->
         <div id="error-msg" style="display:none; color:red; font-size:13px; margin-bottom:12px; text-align:center;">
             ⚠️ يرجى اختيار إجابة قبل المتابعة
         </div>

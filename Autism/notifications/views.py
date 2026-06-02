@@ -13,10 +13,10 @@ def subscribe(request):
             form.save()
             email = form.cleaned_data['email']
             
-            # Render HTML email
+            
             html_content = render_to_string('notifications/email_welcome.html', {'email': email})
             
-            # Send welcome email
+            
             try:
                 send_mail(
                     'مرحباً بك في إحتواء',

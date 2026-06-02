@@ -2,7 +2,6 @@
     padding: 30px;
 }
 
-/* العنوان */
 
 .dashboard-header {
     background: white;
@@ -37,7 +36,6 @@
     color: #4caf50;
 }
 
-/* الإحصائيات */
 
 .stats-grid {
     display: grid;
@@ -109,7 +107,6 @@
     color: #777;
 }
 
-/* الأقسام */
 
 .top-section {
     display: grid;
@@ -133,7 +130,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
-/* العناوين */
 
 .card-title {
     margin-bottom: 40px;
@@ -144,7 +140,6 @@
     font-size: 24px;
 }
 
-/* الجداول */
 
 table {
     width: 100%;
@@ -170,7 +165,6 @@ table td {
     overflow-y: auto;
 }
 
-/* الحالات */
 
 .status {
     padding: 6px 10px;
@@ -194,7 +188,6 @@ table td {
     color: #20b97a;
 }
 
-/* المستخدم */
 
 .active-user {
     background: #e6fff2;
@@ -240,7 +233,6 @@ table td {
     background: #f44336;
 }
 
-/* الإجراءات */
 
 .actions-btn {
     display: flex;
@@ -253,7 +245,6 @@ table td {
     color: #555;
 }
 
-/* النشاط */
 
 .activity-item {
     display: flex;
@@ -302,24 +293,6 @@ table td {
 
 /* responsive */
 
-@media(max-width:1000px) {
-
-    .top-section,
-    .bottom-section {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media(max-width:700px) {
-
-    .dashboard-header {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-
-}
 
 
 /*report*/
@@ -403,312 +376,135 @@ table td {
     transform: translateY(-2px);
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
-
-    .page {
-        flex-direction: column;
-    }
-
-    .support-sidebar {
-        width: 100%;
-        order: 2;
-    }
-
-    .support-content {
-        order: 1;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .info-cards {
+@media (max-width: 1000px) {
+    .top-section {
         grid-template-columns: 1fr;
     }
-
 }
 
 @media (max-width: 768px) {
 
-    .activities {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-@media (max-width: 768px) {
-
-    .support-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-    }
-
-    .plan-duration {
+    html, body {
+        overflow-x: hidden;
         width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .support-sidebar {
-        padding: 14px;
-    }
-
-    .steps {
-        flex-direction: column;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .tip-box {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .tip-icon {
-        margin-top: 10px;
-    }
-}
-
-@media (max-width: 430px) {
-
-    /* الصفحة الأساسية */
-    .page {
-        flex-direction: column;
-        padding: 10px;
-        gap: 10px;
-    }
-
-    /* المحتوى */
-    .support-content {
-        padding: 16px;
-    }
-
-    /* الهيدر */
-    .support-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
-    .plan-duration {
-        width: 100%;
-    }
-
-    /* الكروت */
-    .info-cards {
-        grid-template-columns: 1fr;
-    }
-
-    .info-card {
-        flex-direction: row;
-        align-items: center;
-    }
-
-    /* الأنشطة */
-    .activities-wrapper {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .activities {
-        grid-template-columns: 1fr;
-    }
-
-    /* أزرار السلايدر */
-    .slider-btn {
-        width: 100%;
-        border-radius: 12px;
-    }
-
-    /* النصوص */
-    .activity-card h3 {
-        font-size: 16px;
-    }
-
-    .activity-card p {
-        font-size: 11px;
-    }
-
-    /* sidebar */
-    .support-sidebar {
-        width: 100%;
-        order: 2;
-    }
-
-    /* steps */
-    .step {
-        padding: 14px;
-    }
-
-    .step p {
-        font-size: 11px;
-    }
-
-    /* tip box */
-    .tip-box {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .tip-icon {
-        margin-top: 10px;
-    }
-
-    /* circle progress */
-    .circle {
-        width: 80px;
-        height: 80px;
-    }
-
-    .circle span {
-        font-size: 16px;
-    }
-}
-
-@media (max-width: 430px) {
-
-    .support-sidebar {
-        width: 100%;
-        display: block;
-        /* أو flex عادي */
-    }
-
-}
-
-@media (max-width: 430px) {
-
-    .support-page {
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .support-sidebar {
-        width: 100%;
-        order: 2;
-    }
-
-    .support-content {
-        width: 100%;
-        order: 1;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .weekly-container {
         max-width: 100%;
-        padding: 0 12px;
+    }
+
+    .dashboard-container {
+        width: 100%;
+        max-width: 100%;
+        padding-top: 80px;
+        padding-right: 12px;
+        padding-left: 12px;
         overflow-x: hidden;
     }
 
-    .top {
-        grid-template-columns: 1fr;
-    }
-
-    .moods {
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .mood {
-        width: 50px;
-        height: 50px;
-        font-size: 20px;
-    }
-
-    .now-card {
+    .dashboard-header {
         flex-direction: column;
-    }
-
-    .btn-support {
+        gap: 15px;
+        text-align: center;
+        padding: 20px 15px;
+        border-radius: 18px;
         width: 100%;
-        margin-top: 10px;
     }
 
-    .days {
-        gap: 8px;
+    .dashboard-header h1 {
+        font-size: 19px;
+        line-height: 1.4;
     }
 
-    .day {
-        padding: 10px 6px;
-    }
-
-    .day h3 {
+    .dashboard-header p {
         font-size: 13px;
     }
 
-    .day p {
+    .dashboard-icon {
+        display: none;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    .stat-card {
+        padding: 12px 8px;
+        gap: 8px;
+        border-radius: 14px;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+
+    .stat-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+
+    .stat-card h3 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .stat-card p {
         font-size: 11px;
+        margin: 4px 0 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
-    .days-wrapper {
-        gap: 6px;
-    }
-
-    .arrow {
-        width: 34px;
-        height: 34px;
-        font-size: 13px;
-        flex-shrink: 0;
-    }
-
-    .timeline-card {
-        padding: 14px;
-    }
-
-    .timeline-top {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-    }
-
-    .timeline {
-        padding-right: 36px;
-    }
-
-    .timeline-item {
-        gap: 10px;
-    }
-
-    .activity {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        padding: 12px;
-    }
-
-    .activity h2 {
-        font-size: 15px;
-    }
-
-    .activity p {
-        font-size: 12px;
-    }
-
-    .time {
-        min-width: 55px;
-        font-size: 12px;
-        padding-top: 20px;
-    }
-
-    .tag {
-        font-size: 10px;
-        padding: 6px 10px;
-    }
-
-    .bottom {
+    .top-section, .bottom-section {
         grid-template-columns: 1fr;
+        width: 100%;
+        gap: 15px;
     }
 
-    .bottom-card {
-        min-height: auto;
+    .chart-card, .reports-card, .users-card, .activity-card {
+        padding: 15px;
+        border-radius: 18px;
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 15px;
     }
 
-    .closed-day h2 {
-        font-size: 15px;
+    .chart-card canvas {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 220px;
     }
+
+    .card-title h2 {
+        font-size: 16px;
+    }
+
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 500px;
+    }
+
+    table th, table td {
+        padding: 10px 6px;
+        font-size: 12px;
+    }
+
+    .actions-user {
+        gap: 4px;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .block-btn, .unblock-btn, .delete-btn {
+        padding: 4px 6px;
+        font-size: 9px;
+    }
+
 }
-

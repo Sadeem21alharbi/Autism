@@ -2191,29 +2191,19 @@
   blue
    ========================================================================== */
 
-/* ==========================================================================
-   Blue Theme Variables (Calm Sky & Ice Blue - Very Soft)
-   ========================================================================== */
 :root {
     --blue-main: #9BB8CD;
-    /* أزرق ثلجي باهت وهادئ جداً */
     --blue-light: #E2ECF5;
-    /* درجة ناعمة وخفيفة للـ Pills والتحديدات */
     --blue-pale: #F3F7FA;
-    /* خلفية مريحة جداً ومائلة للبياض */
     --blue-dark: #52616B;
-    /* رمادي كحلي مطفي وناعم للعناوين */
     --border-blue: #E1E8ED;
-    /* حدود ناعمة وخفيفة جداً */
     --blue-btn-hover: #B4C9D7;
-    /* درجة الهوفر عند تمرير الماوس */
 }
 
 [data-theme="blue"] {
     --primary-color: var(--blue-main);
     --secondary-color: var(--blue-btn-hover);
     --accent-color: #C5D7E3;
-    /* لمسات ناعمة جداً للاكشنز الفرعية */
 
     --bg-page: #F8FAFC;
     --bg-sidebar: var(--blue-pale);
@@ -6338,7 +6328,6 @@
 }
 
 
-/*  */
 
 [data-theme="blue"] .cp-hero {
     background: var(--theme-pale) !important;
@@ -6354,5 +6343,3 @@
     color: var(--theme-main) !important;
     background: var(--theme-pale) !important;
 }
-
-/* ------------------------------------------------ */

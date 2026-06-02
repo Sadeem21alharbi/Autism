@@ -20,8 +20,8 @@
         <div class="cp-hero-info">
             <h1>{{ child.name }}</h1>
             <div class="cp-hero-meta">
-                <span>{{ age }} سنوات</span>
-                <span>{{ child.gender }}</span>
+                <span class="cp-tag">{{ age }} سنوات</span>
+                <span class="cp-tag">{{ child.gender }}</span>
                 <span class="cp-tag">لفظي</span>
                 <span class="cp-tag">حساسية: الصوت</span>
             </div>
@@ -158,7 +158,7 @@
         <span class="cp-skill-level">{{ skill.level }}</span>
     </div>
     <div class="cp-skill-bar">
-        <div class="cp-skill-fill" style="width: {{ skill.pct }}%;"></div>
+<div class="cp-skill-fill" style="--skill-width: {{ skill.pct }}%;"></div>
     </div>
     <span class="cp-skill-pct">{{ skill.pct }}%</span>
 </div>
